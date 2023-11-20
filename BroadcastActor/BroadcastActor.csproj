@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.25.1" />
+      <PackageReference Include="Google.Protobuf.Tools" Version="3.25.1" />
+      <PackageReference Include="Grpc.Tools" Version="2.59.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Proto.Actor" Version="1.5.0" />
+      <PackageReference Include="Proto.Cluster" Version="1.5.0" />
+      <PackageReference Include="Proto.Cluster.CodeGen" Version="1.5.0" />
+      <PackageReference Include="Proto.Cluster.TestProvider" Version="1.5.0" />
+      <PackageReference Include="Proto.Remote" Version="1.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProtoGrain Include="grains.proto" AdditionalImportDirs="."/>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Protobuf Include="messages.proto" />
+    </ItemGroup>
+</Project>

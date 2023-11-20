@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package Grains;
+
+option csharp_namespace = "ExploringProtoActor";
+
+import "google/protobuf/empty.proto";
+
+message SetReceiverRequest {
+  int32 number = 1;
+}
+
+message BroadcastRequest {
+  string message = 1;
+}
+
+message ClearRequest {
+}
+
+message Message {
+  string message = 1;
+}
+

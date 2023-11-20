@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package Grains;
+
+option csharp_namespace = "ExploringProtoActor";
+
+import "google/protobuf/empty.proto";
+import "messages.proto";
+
+service BroadcastGrain {
+  rpc SetReceivers(SetReceiverRequest) returns (google.protobuf.Empty);
+  rpc Broadcast(BroadcastRequest) returns (google.protobuf.Empty);
+  rpc Clear(ClearRequest) returns (google.protobuf.Empty);
+}
+
+service ReceiveGrain {
+  rpc Receive(Message) returns (google.protobuf.Empty);
+  rpc Clear(google.protobuf.Empty) returns (google.protobuf.Empty);
+}
