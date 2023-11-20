@@ -12,7 +12,7 @@ public class ReceiverGrain : ReceiveGrainBase
     public ReceiverGrain(IContext context, ClusterIdentity clusterIdentity) : base(context)
     {
         _clusterIdentity = clusterIdentity;
-        _filePath = $"/Users/museop/Temp/{_clusterIdentity.Identity}.txt";
+        _filePath = $"{_clusterIdentity.Identity}.txt";
     }
 
     public override async Task Receive(Message request)
